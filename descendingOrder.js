@@ -27,10 +27,10 @@ function descendingOrder(n){
 
 const descendingOrder = num => {
     return num
-        .toString()
-        .split('')
-        .sort()
-        .reverse()
-        .toString()
-        .replace(/,/g,'')
+            .toString()
+            .split('')
+            .sort()
+            .reverse()
+            .toString()
+            .replace(/,/g,'')
 }
