@@ -16,6 +16,42 @@ of values contained within the collection/array are not relevant.
         SOLUTION
 ---------------------- */
 
+class PaginationHelper {
+  constructor(values, num) {
+    this.results = values;
+    this.results_per_page = num;
+    this.total_results = this.results.length;
+    this.total_pages = Math.ceil(this.total_results / this.results_per_page);
+  }
+
+  pageCount() {
+    return this.total_pages;
+  }
+
+  itemCount() {
+    return this.total_results;
+  }
+
+  pageItemCount(index) {
+    if (index < this.total_pages - 1) {
+      return this.results_per_page;
+    } else if (index === this.total_pages - 1) {
+      return this.total_results % this.results_per_page;
+    } else {
+      return -1;
+    }
+  }
+
+  pageIndex(index) {
+    if (index >= 0 && index < this.total_results) {
+      return Math.floor(index / this.results_per_page);
+    } else {
+      return -1;
+    }
+  }
+}
+
+// Various ways to implement similar solution, minimized
 // class declaration
 class PaginationHelper {
   constructor(collection, itemsPerPage) {
