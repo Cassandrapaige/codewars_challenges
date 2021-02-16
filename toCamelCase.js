@@ -14,7 +14,7 @@ as Pascal case).
         SOLUTION
 ---------------------- */
 
-const snakeToCamel = (name) => {
+const toCamelCase = (name) => {
   let char = name.includes("_") ? "_" : "-";
   let arr = name.split(char);
   let result = arr[0];
@@ -24,4 +24,4 @@ const snakeToCamel = (name) => {
   return result;
 };
 
-console.log(snakeToCamel("the_time_is_now"));
+console.log(toCamelCase("the_time_is_now"));
